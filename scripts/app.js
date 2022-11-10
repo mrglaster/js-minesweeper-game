@@ -36,7 +36,7 @@ let numbers = [];
 let grid;
 let bombFrequency = 0.2; 
 let gameOver = false;
-let GAME_TYPE = 0;
+
 
 /**Solves if there will be a bomb on the tile */
 function do_solution(x, y){
@@ -119,7 +119,7 @@ function create_board(grid){
     process_field(grid);
 }
 
-/**Add a flag on a tile (or remove) */
+/**Put a flag on a tile (or remove) */
 function add_flag(tile){
 	if (gameOver) return;
 	if (!tile.classList.contains(ATTRIBITE_CHECKED)) {
@@ -210,7 +210,7 @@ const checkTile = (tile, coordinate) => {
 	}, 10);
 }
 
-/**Do end game */
+/**End of the game */
 const endGame = (tile)=>{
 	gameOver = true;
     tile.setAttribute('src', TILE_BOMB_PATH);
@@ -242,18 +242,10 @@ const checkVictory = () => {
 	}
 }
 
-/** Select play mode: 0 = use keyboard, 1 = use mouse */
-function select_playmode(){
-    GAME_TYPE = prompt("Which playing mode would you preffer: Keyboard or Mouse play? (0/1)");
-    if( GAME_TYPE!=0 && GAME_TYPE!=1){
-        GAME_TYPE = 0;
-    }
-}
 
 /**Game start function */
 function start(){
     clear_arrays();
-    select_playmode();
     grid = document.querySelector(GRID_CLASSNAME);
     grid.replaceChildren();
     create_board(grid);
