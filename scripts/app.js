@@ -250,6 +250,7 @@ function start(){
     grid = document.querySelector(GRID_CLASSNAME);
     grid.replaceChildren();
     create_board(grid);
+    alert(`On the field were created ${bombs.length} bombs!`);
 }
 
 
