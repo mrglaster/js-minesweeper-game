@@ -237,10 +237,11 @@ const checkVictory = () => {
 		if (!ctile.classList.contains(ATTRIBITE_CHECKED) && !bombs.includes(coordinate)) win = false;
     }
 	if (win) {
-		console.log("YOU WON!");
+		alert("Congratulations! You won!");
 		gameOver = true;
 	}
 }
+
 
 
 /**Game start function */
